@@ -22,7 +22,7 @@ class FormaPagamentoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'unique:formas_pagamento,name,' . $this->route('formas_pagamento')?->id],
+            'nome' => ['required', 'string', 'max:255', 'unique:formas_pagamento,nome,' . $this->route('formas_pagamento')?->id],
         ];
     }
 
@@ -32,10 +32,10 @@ class FormaPagamentoRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'O nome da forma de pagamento é obrigatório.',
-            'name.string' => 'O nome da forma de pagamento deve ser um texto.',
-            'name.max' => 'O nome da forma de pagamento não pode ter mais de 255 caracteres.',
-            'name.unique' => 'Já existe uma forma de pagamento com este nome.',
+            'nome.required' => 'O nome da forma de pagamento é obrigatório.',
+            'nome.string' => 'O nome da forma de pagamento deve ser um texto.',
+            'nome.max' => 'O nome da forma de pagamento não pode ter mais de 255 caracteres.',
+            'nome.unique' => 'Já existe uma forma de pagamento com este nome.',
         ];
     }
 }

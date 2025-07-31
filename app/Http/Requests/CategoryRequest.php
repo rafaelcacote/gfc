@@ -22,7 +22,7 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'unique:categories,name,' . $this->route('category')?->id],
+            'nome' => ['required', 'string', 'max:255', 'unique:categories,nome,' . $this->route('category')?->id],
         ];
     }
 
@@ -32,10 +32,10 @@ class CategoryRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'O nome da categoria é obrigatório.',
-            'name.string' => 'O nome da categoria deve ser um texto.',
-            'name.max' => 'O nome da categoria não pode ter mais de 255 caracteres.',
-            'name.unique' => 'Já existe uma categoria com este nome.',
+            'nome.required' => 'O nome da categoria é obrigatório.',
+            'nome.string' => 'O nome da categoria deve ser um texto.',
+            'nome.max' => 'O nome da categoria não pode ter mais de 255 caracteres.',
+            'nome.unique' => 'Já existe uma categoria com este nome.',
         ];
     }
 }

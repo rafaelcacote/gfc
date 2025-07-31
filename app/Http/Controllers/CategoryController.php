@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index(): Response
     {
-        $categories = Category::orderBy('name')->paginate(15);
+        $categories = Category::orderBy('nome')->paginate(15);
 
         return Inertia::render('categories/Index', [
             'categories' => $categories,

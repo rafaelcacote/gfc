@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormaPagamentoController;
+use App\Http\Controllers\GastoController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -16,6 +17,7 @@ Route::get('dashboard', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('formas-pagamento', FormaPagamentoController::class);
+    Route::resource('gastos', GastoController::class);
 });
 
 require __DIR__.'/settings.php';

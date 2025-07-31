@@ -15,7 +15,7 @@ class FormaPagamentoController extends Controller
      */
     public function index(): Response
     {
-        $formasPagamento = FormaPagamento::orderBy('name')->paginate(15);
+        $formasPagamento = FormaPagamento::orderBy('nome')->paginate(15);
 
         return Inertia::render('formas-pagamento/Index', [
             'formasPagamento' => $formasPagamento,
